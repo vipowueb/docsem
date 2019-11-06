@@ -1,0 +1,13 @@
+<header>
+<div class="header-container-logo">
+    <div id="uni-logo-left">
+        {% if backLink %}<a href="{{ backLink }}" class="back-button" rel="back"></a>{% else %}{% endif %}
+    </div>
+    <div id="uni-logo">
+        <a href="http://www.uni.lu/" target="_blank"><img src="{{ "/gfx/UL_logo.jpg" | prepend: site.baseurl }}" alt="Universit&eacute; du Luxembourg" /></a>
+    </div>
+    <div id="uni-logo-right">
+        <h4>PhD Seminar at the Mathematics Research Unit (RMATH) {%if page.semesterYear %} &dash; {{ page.semesterYear | date: '%Y' }}{% endif %}</h4>
+    </div>
+</div>
+</header>

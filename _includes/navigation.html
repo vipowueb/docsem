@@ -1,0 +1,41 @@
+<nav>
+    <!-- <div id="expander">
+                <i id="toggle-menu" class="fa fa-navicon expander hover"></i>
+            </div> -->
+    <ul id="navi">
+        <li class="border main-item"><a href="{{ site.baseurl }}/">Main page</a> <i class="fas fa-angle-down"></i>
+            <dl class="semester-anchor">
+                {% if noSemesterDropdown %}
+                {% else %}
+                <li><a href="#summer">summer semester</a></li>
+                <li><a href="#winter">winter semester</a></li>
+                {% endif %}
+                <li><a href="{{ site.baseurl }}/about/">about</a></li>
+            </dl>
+        </li>
+        <li class="rmath-item"><a href="http://math.uni.lu/" target="_blank">RMATH</a></li>
+
+        <li class="past-sessions">Recent sessions</li>
+
+        {% assign sortedSemesters = site.semester | sort: 'semesterYear' | reverse %}
+        {% for item in sortedSemesters limit:4 %}
+        <li class="border"><a href="{{ item.url | prepend: site.baseurl }}#summer">{{ item.title }}</a></li>
+        {% endfor %}
+
+        <li class="archive-item hover" onclick="void(0)">Archive <i class="fas fa-angle-down"></i>
+            <dl class="archive">
+                {% for item in sortedSemesters offset:4 %}
+                <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></li>
+                {% endfor %}
+                <li><a href="{{ site.baseurl }}/archive/docsem15-16.html">2015 &ndash; 2016</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsem14-15.html">2014 &ndash; 2015</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsem13-14.html">2013 &ndash; 2014</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsem12-13.html">2012 &ndash; 2013</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsemOLD.html">2011 &ndash; 2012</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsem1011.html">2010 &ndash; 2011</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsem0910.html">2009 &ndash; 2010</a></li>
+                <li><a href="{{ site.baseurl }}/archive/docsem0809.html">2008 &ndash; 2009</a></li>
+            </dl>
+        </li>
+    </ul>
+</nav>

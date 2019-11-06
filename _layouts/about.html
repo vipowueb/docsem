@@ -1,0 +1,17 @@
+---
+    layout: default
+---
+{% capture yr %}{{ page.date | date: "%Y-01-01" }}{% endcapture %}
+{% assign noSemesterDropdown = true %}
+
+<div class="wrapper">
+    {% include header.html %}
+    {% include navigation.html %}
+
+    <div id="content">
+        <h2>About</h2>
+        <div id="about">
+            {{ content }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% capture yr %}{{ page.date | date: "%Y-01-01" }}{% endcapture %}
+{% assign semesterUrl = site.semester | where: "semesterYear", yr | first %}
+{% assign backLink = semesterUrl.url | prepend: site.baseurl %}
+
+<div class="wrapper">
+    {% include header.html %}
+    {% include navigation.html %}
+
+    <div id="talk">
+        <ul class="talks">
+            <li>
+                <div>
+                    <span class="date"><b>{{ page.date | date: "%d %B %Y" }}</b></span>
+                    <b>{{ page.speaker }}</b>,
+                    <i>{{ page.title }}</i>
+                </div>
+                <div class="abstract">
+                    <span class="abstract-span"><b>Abstract</b></span> {{ page.content }}
+                </div>
+            </li>
+        </ul>
+    </div>

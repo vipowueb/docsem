@@ -1,0 +1,71 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   15px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+
+$ul-red:           rgb(255,20,11);
+$ul-blue:          rgb(0,170,220);
+$ul-blue-darker:   rgba(0,184,239,1);
+$grey-title:       rgb(92,92,92);
+$light-black:      rgba(51,51,51,.7);
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$on-mobile:        600px;
+$on-laptop:        800px;
+
+
+$fstc: CMYK(100,0,33,4);
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "fontawesome.min"
+;
+
+
+/*!
+    * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
+    * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+*/
+@font-face{
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url({{ "/fonts/fa-solid-900.eot" | prepend: site.baseurl }});
+    src: url({{'/fonts/fa-solid-900.eot?#iefix' | prepend: site.baseurl }}) format("embedded-opentype"),url({{'/fonts/fa-solid-900.woff2' | prepend: site.baseurl }}) format("woff2"),url({{'/fonts/fa-solid-900.woff' | prepend: site.baseurl }}) format("woff"),url({{'/fonts/fa-solid-900.ttf' | prepend: site.baseurl }}) format("truetype"),url({{'/fonts/fa-solid-900.svg#fontawesome' | prepend: site.baseurl }}) format("svg");
+}
+
+.fa, .fas{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900
+}

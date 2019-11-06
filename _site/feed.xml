@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PhD seminar of the doctoral school in mathematics @ Université du Luxembourg</title>
+    <description>Dedicated to PhD students, the PhD Seminar is an important part of the research training offered at the Mathematics Research Unit of the University of Luxembourg. The PhD Seminar has a twofold objective: (1) To give PhD students the opportunity to present their fields of research and some topics and problems studied in those fields. The usual audience of the PhD Seminar is composed by PhD students and young researchers of the Mathematics Research Unit. The atmosphere is informal, so that all participants can ask the questions they want. Comments and suggestions on the presentations are also highly encouraged. (2) To provide a good general mathematical background, in relation with the research interests of groups of PhD students and other participants of the PhD Seminar. In this perspective, the PhD Seminar proposes all over the academic year series of introductory minicourses, held by the young researchers of the Mathematics Research Unit.
+</description>
+    <link>http://localhost:4000/docsem/</link>
+    <atom:link href="http://localhost:4000/docsem/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 06 Nov 2019 22:25:14 +0100</pubDate>
+    <lastBuildDate>Wed, 06 Nov 2019 22:25:14 +0100</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+  </channel>
+</rss>

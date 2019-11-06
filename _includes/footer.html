@@ -1,0 +1,33 @@
+<footer class="footer">
+    Created by <a href="mailto:robert@tractatus.info">Robert Baumgarth</a> <span class="footer-divider">|</span> Last updated on {{ 'now' | date: "%d %B %Y" }}
+</footer>
+
+<div id="topper">
+    <a href="#"><i class="fas fa-chevron-circle-up"></i></a>
+</div>
+
+<script defer>
+    window.addEventListener('load', function () {
+
+        window.onscroll = function () {
+            stickyHeader()
+        };
+
+        var navbar = document.getElementsByTagName('nav')[0];
+        var topper = document.getElementById('topper');
+        var sticky = navbar.offsetTop;
+
+        function stickyHeader() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+                topper.style.opacity = '1';
+            } else {
+                navbar.classList.remove("sticky");
+                topper.style.opacity = '0';
+            }
+        }
+    });
+
+    (function(l){var i,s={touchend:function(){}};for(i in s)l.addEventListener(i,s)})(document); // sticky hover fix in iOS
+</script>
+</body>

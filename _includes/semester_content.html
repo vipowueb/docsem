@@ -1,0 +1,118 @@
+<div class="wrapper">
+    {% include header.html %}
+
+    {% include navigation.html %}
+
+    <div id="content">
+
+        <h2>General Information</h2>
+
+        <h3>Time and venue</h3>
+        The sessions take place every <b>Thursday from {{ page.from }} to {{ page.to }}</b> in room
+        <b>{{ page.location }}</b>.
+
+        <h3>Aim</h3>
+        Dedicated to PhD students, the PhD Seminar is an important part of the research training offered at the <a
+            href='http://math.uni.lu'>Mathematics Research Unit</a> of the <a href='http://www.uni.lu/'>University of
+            Luxembourg</a>. The PhD Seminar has a twofold objective:
+
+        <ul class="aim">
+            <li> To give PhD students the opportunity to present their fields of research
+                and some topics and problems studied in those fields.
+                The usual audience of the PhD Seminar is composed by PhD students and
+                young researchers of the Mathematics Research Unit. The atmosphere is informal, so that all participants
+                can ask the questions they want.
+                Comments and suggestions on the presentations are also highly encouraged.</li>
+            <li> To provide a good general mathematical background, in relation with the
+                research interests of groups of PhD students
+                and other participants of the PhD Seminar.
+                In this perspective, the PhD Seminar proposes all over the academic year
+                series of introductory minicourses, held by
+                the young researchers of the Mathematics Research Unit.</li>
+        </ul>
+
+        <h3>Who can be a speaker?</h3>
+        All contributions for talks or minicourses are welcome, including from people external to Luxembourg's
+        Mathematics Research Unit!
+        If you want to make a presentation, please provide the organizers with a title and an abstract of your talk.
+        Lecture notes in any form are welcome as well.
+
+        <h2>Organisers</h2>
+        <ul class="organiser">
+            {% for organiser in page.organiser %}
+            <li><a href="{{ organiser.url }}">{{ organiser.name }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <hr class="hor-bar" />
+
+        <h2 id="summer">Summer semester: Talks</h2>
+
+        <ul class="talks">
+            <li>
+                <b>{{ page.organisationalMeeting | date: "%d %B %Y" }}</b>
+                <i>Organisational meeting</i>
+            </li>
+
+            {% capture yr %}{{ page.semesterYear | date: '%Y' }}{% endcapture %}
+
+            {% for item in site.talks %}
+            {% capture date %}{{ item.date | date: '%Y' }}{% endcapture %}
+            {% if date == yr %}
+            <li>
+                <div>
+                    <span class="date"><b>{{ item.date | date: "%d %B %Y" }}</b></span>
+                    <b><a href="{{ item.url | prepend: site.baseurl }}">{{ item.speaker }}</a></b>,
+                    <i>{{ item.title }}</i>
+                </div>
+                <div class="abstract">
+                    <span class="abstract-span"><b>Abstract</b></span> {{ item.content }}
+                </div>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <hr class="hor-bar" />
+
+    <div id="away-days">
+        <h2 id="winter">Winter semester: PhD Away Days</h2>
+
+        <h3>Aim</h3>
+        The PhD seminar is replaced once per year by the &laquo;&nbsp;PhD Away Days&nbsp;&raquo;, i.e. a weekend
+        during which the PhD candidates present their research area or related topics to their fellow PhD students
+        hence strengthening their presentation skills and socialise with the other PhD candidates. How to organise 
+        the mathematical content (GMS style talks, mini courses etc.) and the journey and corresponding activities 
+        varies depending on the organising PhD representative(s).
+
+        {% for item in site.away_days %}
+        {% capture date %}{{ item.semesterYear | date: '%Y' | plus: 0 }}{% endcapture %}
+        {% if date == yr %}
+        {% if item.location %}
+        <h3>Dates and Location</h3>
+        The PhD Away Days {{ item.semesterYear | date: '%Y' }} took place in <b>{{ item.location }} from {{ item.from | date: "%B %d" }} to
+                {{ item.to | date: "%B %d, %Y" }}</b>.
+        The presentations were assessed by  {% for supervisor in item.supervisors %}{{ supervisor.name }}{% if forloop.last %}.{% else %} and {% endif %}{% endfor %}
+        {% endif %}
+
+        {% if item.organiser %}
+        <h3>Organisers</h3>
+        <ul class="organiser">
+            {% for organiser in item.organiser %}
+            <li><a href="{{ organiser.url }}" target="_blank">{{ organiser.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if item.abstractsLink %}<p>The titles and abstracts of the talks can be downloaded <a
+                href="{{ item.abstractsLink | prepend: site.baseurl }}" target="_blank">here</a>.</p>{% endif %}
+
+        <div style="padding-top: 1em">
+            {{ item.content | markdownify }}
+        </div>
+        {% break %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>

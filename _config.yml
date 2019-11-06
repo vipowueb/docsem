@@ -1,0 +1,39 @@
+# Site settings
+title: PhD seminar of the doctoral school in mathematics @ Université du Luxembourg
+email: robert.baumgarth@uni.lu
+description: > # this means to ignore newlines until "baseurl:"
+  Dedicated to PhD students, the PhD Seminar is an important part of the research training offered at the Mathematics Research Unit of the University of Luxembourg. The PhD Seminar has a twofold objective: (1) To give PhD students the opportunity to present their fields of research and some topics and problems studied in those fields. The usual audience of the PhD Seminar is composed by PhD students and young researchers of the Mathematics Research Unit. The atmosphere is informal, so that all participants can ask the questions they want. Comments and suggestions on the presentations are also highly encouraged. (2) To provide a good general mathematical background, in relation with the research interests of groups of PhD students and other participants of the PhD Seminar. In this perspective, the PhD Seminar proposes all over the academic year series of introductory minicourses, held by the young researchers of the Mathematics Research Unit.
+baseurl: "/docsem" # the subpath of your site, e.g. /blog/
+url: "http://math.uni.lu" # the base hostname & protocol for your site
+
+sass:
+    style: compressed
+
+collections:
+    away_days:
+        output: true
+        permalink: /away_days/:title.html
+
+    semester:
+        output: true
+        permalink: /semester/:title.html
+
+    talks:
+        output: true
+        permalink: /:categories/:year/:month/:day/:title.html
+
+    f:
+        output: true
+
+    fonts:
+        output: true
+
+    gfx:
+        output: true
+
+twitter_username:
+github_username:
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:title:output_ext
