@@ -1,93 +1,112 @@
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+	margin: 0;
+	padding: 0;
 }
 
+blockquote {
+	margin: 1em .5em;
+	padding: 0 .5em;
+	color: $grey-color;
+	border-left: .15em solid $grey-color;
+}
 
 body {
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: 300;
+	color: $text-color;
+	background-color: $background-color;
+	-webkit-text-size-adjust: 100%;
 }
-
 
 img {
-    max-width: 100%;
-    vertical-align: middle;
+	max-width: 100%;
+	vertical-align: middle;
 }
 
-
-ul, ol {
-    list-style: none;
+ul,
+ol {
+	list-style: none;
 }
 
 li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
+	> ul,
+	> ol {
+		margin-bottom: 0;
+	}
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 300;
 }
-
 
 .wrapper {
-    max-width: -webkit-calc(1200px - (#{$spacing-unit} * 2));
-    max-width:         calc(1200px - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
+	max-width: -webkit-calc(1200px - (#{$spacing-unit} * 2));
+	max-width: calc(1200px - (#{$spacing-unit} * 2));
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: $spacing-unit;
+	padding-left: $spacing-unit;
+	@extend %clearfix;
 
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(1200px - (#{$spacing-unit}));
-        max-width:         calc(1200px - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+	@include media-query($on-laptop) {
+		max-width: -webkit-calc(1200px - (#{$spacing-unit}));
+		max-width: calc(1200px - (#{$spacing-unit}));
+		padding-right: $spacing-unit / 2;
+		padding-left: $spacing-unit / 2;
+	}
 
-    @include media-query($on-mobile) {
-        max-width: -webkit-calc(1200px - (#{$spacing-unit}));
-        max-width:         calc(1200px - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 5;
-        padding-left: $spacing-unit / 5;
-    }
+	@include media-query($on-mobile) {
+		max-width: -webkit-calc(1200px - (#{$spacing-unit}));
+		max-width: calc(1200px - (#{$spacing-unit}));
+		padding-right: $spacing-unit / 5;
+		padding-left: $spacing-unit / 5;
+	}
 }
-
 
 %clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
-
 
 /* 
     sticky footer
 */
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 body {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .wrapper {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 .footer {
-    flex-shrink: 0;
+	flex-shrink: 0;
 }

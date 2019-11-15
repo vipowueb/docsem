@@ -2,7 +2,7 @@
 layout: default
 ---
 {% capture yr %}{{ page.date | date: "%Y-01-01" }}{% endcapture %}
-{% assign semesterUrl = site.semester | where: "semesterYear", yr | first %}
+{% assign semesterUrl = site.semester | where: "semesterYear", yr | first %}
 {% assign backLink = semesterUrl.url | prepend: site.baseurl %}
 
 {% assign noSemesterDropdown = true %}

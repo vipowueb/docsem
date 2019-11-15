@@ -85,15 +85,15 @@ nav
         li.border:not(:nth-last-of-type(2))
             border-right: 1px solid $ul-blue
 
-    .past-sessions, 
+    .past-sessions,
     .archive-item
         text-align: right
 
-    .main-item, 
+    .main-item,
     .archive-item
         position: relative
 
-    .semester-anchor, 
+    .semester-anchor,
     .archive
         display: none
         position: absolute
@@ -117,11 +117,10 @@ nav
     .archive-item:hover
         border-right: 1px solid $ul-blue
 
-    .main-item:hover > .semester-anchor, 
+    .main-item:hover > .semester-anchor,
     .archive-item:hover > .archive
         display: block
         white-space: nowrap
-
 
 #content, #away-days
     margin: 1em 0
@@ -137,7 +136,7 @@ nav
 
     h2
         margin: $spacing-unit 0 $spacing-unit / 2 0
-    
+
     p
         display: inline
 
@@ -148,13 +147,13 @@ nav
     margin: 3em auto
     padding: 0
     border: 0
-    border-bottom: 1px solid $ul-blue 
+    border-bottom: 1px solid $ul-blue
 
-.aim, .organiser
+.aim, .organiser, .away-days-past-sessions
     li
         margin-left: $spacing-unit
 
-.aim
+.aim, .away-days-past-sessions
     li:before
         content: "\f105"
         font-family: "Font Awesome 5 Free"
@@ -174,7 +173,7 @@ nav
         text-indent: $spacing-unit / 2
 
 .talks
-    li 
+    li
         margin: $spacing-unit*1.5 0
 
     .abstract
@@ -182,7 +181,6 @@ nav
 
     .date, .abstract-span
         padding-right: $spacing-unit / 2
-
 
 footer
     display: block
@@ -199,17 +197,16 @@ footer
     position: fixed
     right: 100px
     bottom: 100px
-    opacity: 0;
-    transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -webkit-transition: opacity .25s ease-in-out;
+    opacity: 0
+    transition: opacity .25s ease-in-out
+    -moz-transition: opacity .25s ease-in-out
+    -webkit-transition: opacity .25s ease-in-out
     font-size: $base-font-size*3
 
-    a 
+    a
         color: lighten($ul-blue,25%)
 
-
-@include media-query($on-mobile)
+        @include media-query($on-mobile)
     #uni-logo-right
         width: 60%
 
@@ -227,4 +224,3 @@ footer
         right: 25px
         bottom: 5px
         font-size: $base-font-size*2
-

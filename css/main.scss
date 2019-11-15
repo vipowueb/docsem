@@ -29,8 +29,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 $on-mobile:        600px;
 $on-laptop:        800px;
 
-
-$fstc: CMYK(100,0,33,4);
+$fstc:              CMYK(100,0,33,4);
 
 
 html {
@@ -56,7 +55,7 @@ html {
     * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
     * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
 */
-@font-face{
+@font-face {
     font-family: "Font Awesome 5 Free";
     font-style: normal;
     font-weight: 900;
@@ -65,7 +64,7 @@ html {
     src: url({{'/fonts/fa-solid-900.eot?#iefix' | prepend: site.baseurl }}) format("embedded-opentype"),url({{'/fonts/fa-solid-900.woff2' | prepend: site.baseurl }}) format("woff2"),url({{'/fonts/fa-solid-900.woff' | prepend: site.baseurl }}) format("woff"),url({{'/fonts/fa-solid-900.ttf' | prepend: site.baseurl }}) format("truetype"),url({{'/fonts/fa-solid-900.svg#fontawesome' | prepend: site.baseurl }}) format("svg");
 }
 
-.fa, .fas{
+.fa, .fas {
     font-family: "Font Awesome 5 Free";
     font-weight: 900
 }

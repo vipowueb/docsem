@@ -1,0 +1,48 @@
+
+<div id="away-days">
+    <h2 id="winter">{% if awaySinglePage %}PhD Away Days {{ awayDays.semesterYear | date: '%Y' }}{% else %}Winter semester: <a href="{{ awayDays.url | prepend: site.baseurl }}">PhD Away Days</a>{% endif %}</h2>
+
+    <h3>Aim</h3>
+    The PhD seminar is replaced once per year by the &laquo;&nbsp;PhD Away Days&nbsp;&raquo;, i.e. a weekend
+    during which the PhD candidates present their research area or related topics to their fellow PhD students
+    hence strengthening their presentation skills and socialise with the other PhD candidates. How to organise 
+    the mathematical content (GMS style talks, mini courses etc.) and the journey and corresponding activities 
+    varies depending on the organising PhD representative(s).
+
+    {% if awayDays.location %}
+    <h3>Dates and Location</h3>
+    The PhD Away Days {{ awayDays.semesterYear | date: '%Y' }} took place in <b>{{ awayDays.location }} from {{ awayDays.from | date: "%B %d" }} to
+            {{ awayDays.to | date: "%B %d, %Y" }}</b>.
+    The presentations were assessed by  {% for supervisor in awayDays.supervisors %}{{ supervisor.name }}{% if forloop.last %}.{% else %} and {% endif %}{% endfor %}
+    {% endif %}
+
+    {% if awayDays.organiser %}
+    <h3>Organisers</h3>
+    <ul class="organiser">
+        {% for organiser in awayDays.organiser %}
+        <li><a href="{{ organiser.url }}" target="_blank">{{ organiser.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if awayDays.abstractsLink %}<p>The titles and abstracts of the talks can be downloaded <a
+            href="{{ awayDays.abstractsLink | prepend: site.baseurl }}" target="_blank">here</a>.</p>{% endif %}
+
+    <div style="padding-top: 1em">
+        {{ awayDays.content | markdownify }}
+    </div>
+
+    {% if awaySinglePage %}
+    <div class="away-days-past-sessions">
+        <h2>Past sessions</h2>
+        <ul>
+            {% for item in site.away_days reversed %}
+            {% if item.semesterYear == page.semesterYear%}
+            {% else %}
+            <li> <a href="{{ item.url | prepend: site.baseurl }}">PhD Away Days {{ item.semesterYear | date: "%Y" }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
