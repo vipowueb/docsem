@@ -1,7 +1,7 @@
 ---
 layout:     talk
 title:      "tba"
-speaker:    Eduardo IBARGUENGOYTA
+speaker:    Diptaishik CHOUDHURY
 categories: talks
 ---
 tba
